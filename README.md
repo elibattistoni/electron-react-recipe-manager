@@ -10,6 +10,6 @@ React concepts used:
 - Modals for showing the details of a recipe
 
 To start the project:
-- clone or downlaod the folder
+- fork or downlaod the folder
 - npm install
 - npm start
