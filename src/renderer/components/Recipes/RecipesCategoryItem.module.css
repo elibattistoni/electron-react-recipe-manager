@@ -1,0 +1,24 @@
+.recipesColumn {
+  border-radius: var(--border-radius-normal);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white-light-60);
+}
+
+.recipesColumn header {
+  padding: 2rem 0;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-top-left-radius: var(--border-radius-normal);
+  border-top-right-radius: var(--border-radius-normal);
+}
+
+.recipesColumn main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem
+}

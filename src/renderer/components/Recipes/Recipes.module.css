@@ -1,0 +1,38 @@
+.recipesContainer {
+  width: 90%;
+  margin: auto;
+  margin-top: 4rem;
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 1.8rem;
+}
+
+.footerTrash {
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.trashBtn {
+  margin: 0;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.trashBtn:hover, .trashBtn:active {
+  background-color: var(--color-pink);
+}
+
+.trashIcon {
+  font-size: 1.6rem;
+}
+
+@media(min-width:112em) {
+  .recipesContainer, .footerTrash {
+    max-width: 160rem
+  }
+}

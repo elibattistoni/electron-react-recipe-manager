@@ -1,50 +1,30 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
+import { Fragment, useContext } from 'react';
+import NewRecipe from './components/NewRecipe/NewRecipe';
+import { RecipesContext, RecipesContextObj } from './store/recipes-context';
+import Recipes from './components/Recipes/Recipes';
+import RecipeModal from './components/RecipeModal/RecipeModal';
+import RecipeFilter from './components/RecipeFilter/RecipeFilter';
 
-const Hello = () => {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-};
+function App() {
+  const ctx = useContext<RecipesContextObj>(RecipesContext);
 
-export default function App() {
+  function closeModalHandler(): void {
+    ctx.deActivateRecipe();
+  }
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
+    <Fragment>
+      <NewRecipe />
+      <RecipeFilter />
+      <Recipes />
+      {ctx.activatedRecipe && (
+        <RecipeModal
+          recipe={ctx.activatedRecipe}
+          onCloseModal={closeModalHandler}
+        />
+      )}
+    </Fragment>
   );
 }
+
+export default App;
