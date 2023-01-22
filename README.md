@@ -8,3 +8,8 @@ React concepts used:
 - Debouncing for validating the form only after a predetermined timeout
 - Saving of the recipes in the local storage
 - Modals for showing the details of a recipe
+
+To start the project:
+- clone or downlaod the folder
+- npm install
+- npm start
